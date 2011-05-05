@@ -7,7 +7,7 @@ def make_maze(path_depth=15):
 	x = 0
 	y = 0
 	
-	for x in range(path_depth):
+	for i in range(path_depth):
 		maze.add((x, y))
 		xd, yd= random.choice(directions.values())
 		x += xd

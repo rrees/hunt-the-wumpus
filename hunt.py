@@ -4,6 +4,7 @@ import random
 class Hunt:
 	def __init__(self):
 		self.maze = make_maze()
+		print(self.maze)
 		self.hunter = random.choice(list(self.maze))
 		self.wumpus = random.choice(list(self.maze))
 	
@@ -23,9 +24,9 @@ class Hunt:
 			for direction, delta in directions.items():
 				dx, dy = delta
 				new_position =  (self.hunter[0] + dx, self.hunter[1] + dy)
-				if new_position in maze:
+				if new_position in self.maze:
 					print direction,
-				print
+			print
 			
 			direction = raw_input()
 			assert direction in directions.keys()

@@ -1,10 +1,11 @@
 from maze_maker import make_maze, directions
 import random
+import os
 
 class Hunt:
 	def __init__(self):
 		self.maze = make_maze()
-		print(self.maze)
+		#print(self.maze)
 		self.hunter = random.choice(list(self.maze))
 		self.wumpus = random.choice(list(self.maze))
 	
@@ -47,6 +48,7 @@ class Hunt:
 			
 			# find out if wumpus is next to you
 			if (abs(self.hunter[0] - self.wumpus[0]) < 2) and (abs(self.hunter[1] - self.wumpus[1])):
+				os.system('say "ruhr ruhr ruhr ruhr ruhr"')
 				print "The Wumpus is galluphing nearby!"
 				
 Hunt().game()

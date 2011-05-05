@@ -18,6 +18,15 @@ class Hunt:
 		while True:
 			print "You are at %d,%d" % self.hunter
 			
+			# Show exits
+			print "You can go to: "
+			for direction, delta in directions.items():
+				dx, dy = delta
+				new_position =  (self.hunter[0] + dx, self.hunter[1] + dy)
+				if new_position in maze:
+					print direction,
+				print
+			
 			direction = raw_input()
 			assert direction in directions.keys()
 			
